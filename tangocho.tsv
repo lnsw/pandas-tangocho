@@ -1,0 +1,13 @@
+pandasをインポートする	import pandas as pd
+dfにcsvファイル「n180200200.csv」をヘッダー無し、シフトJISで読み込む	df=pd.read_csv('n180200200.csv', encoding='shift-jis', header=None)
+dfのカラム4の1000より多いものを抽出	df.loc[df[4] > 1000]
+dfのカラム0から'山'を含むものだけを抽出	df.loc[df[0].str.contains('山')]
+dfのカラム1の和を出す	df[1].sum()
+dfのカラム1の平均を出す	df[1].mean()
+dfのカラム5の最大値を出す	df[5].max()
+dfのカラム5の最小値を出す	df[5].min()
+dfのカラム0に'山'の字の入った個数を数える	df[0].str.contains('山').sum()
+dfのカラム0に'山'の字の入った行のカラム6の合計	(df.loc[df[0].str.contains('山')])[6].sum()
+dfのカラム1よりカラム2が大きいとき、dfのカラム9に'○'を追加	df.loc[df[1]<df[2],9]='○'
+dfのカラム6から','を消す	df[6]=df[6].str.replace(',','')
+dfのカラム6をint型にする	df[6]=df[6].astype('int')
